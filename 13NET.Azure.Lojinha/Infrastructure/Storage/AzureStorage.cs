@@ -47,5 +47,21 @@ namespace _13NET.Azure.Lojinha.Infrastructure.Storage
                 .Where(x => x.Produto != null)
                 .Select(x => JsonConvert.DeserializeObject<Produto>(x.Produto)).ToList();
         }
+        public async Task<Produto> GetProduto(string id)
+        {
+            var table = _tableClient.GetTableReference("produtos");
+            table.CreateIfNotExistsAsync().Wait();
+
+            var operation = TableOperation.Retrieve<ProdutoEntity>("13net", id);
+            var retrievedResult = await table.ExecuteAsync(operation);
+
+            if (retrievedResult.Result != null)
+            {
+                var produtoEntity = (ProdutoEntity)retrievedResult.Result;
+                return JsonConvert.DeserializeObject<Produto>(produtoEntity.Produto);
+            }
+
+            return null;
+        }
     }
 }

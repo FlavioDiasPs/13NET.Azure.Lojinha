@@ -8,5 +8,6 @@ namespace _13NET.Azure.Lojinha.Infrastructure.Storage
     {
         void AddProduto(Produto produto);
         Task<List<Produto>> GetProdutos();
+        Task<Produto> GetProduto(string id);
     }
 }

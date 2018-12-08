@@ -1,10 +1,13 @@
 ﻿using _13NET.Azure.Lojinha.App_Config;
+using _13NET.Azure.Lojinha.Infrastructure.Mappings;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.AzureAD.UI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 
 namespace _13NET.Azure.Lojinha
 {
@@ -28,8 +31,14 @@ namespace _13NET.Azure.Lojinha
             services.AddAuthentication(AzureADDefaults.AuthenticationScheme)
                     .AddAzureAD(options => Configuration.Bind("AzureAd", options));
 
-            services.AddAppDependencyInjections();            
-            services.AddMvc();
+            services.AddAppDependencyInjections();
+
+            Mapper.Initialize(options => options.AddProfile<ProdutoProfile>());
+            services.AddAutoMapper();
+
+            services.AddMvc()
+                    .AddJsonOptions(options => 
+                    options.SerializerSettings.Formatting = Formatting.Indented);
         }
        
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

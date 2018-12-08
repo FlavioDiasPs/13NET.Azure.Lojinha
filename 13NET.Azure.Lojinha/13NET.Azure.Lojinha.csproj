@@ -21,8 +21,6 @@
 
   <ItemGroup>
     <Folder Include="Core\Interfaces\" />
-    <Folder Include="Infrastructure\Mappings\" />
-    <Folder Include="Core\ViewModels\" />
     <Folder Include="Infrastructure\Repository\" />
   </ItemGroup>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - _13NET.Azure.Lojinha</title>
+    <title>@ViewData["Title"] - Lojinha</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">_13NET.Azure.Lojinha</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Lojinha</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -36,12 +36,18 @@
                 </ul>
             </div>
         </div>
+        <p class="navbar-text carrinho-placeholder"></p>
+
+        <form method="post" action="/Carrinho/Finalizar">
+            <br />
+            <button type="submit" class="btn btn-danger">Finalizar compra</button>
+        </form>
     </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2018 - _13NET.Azure.Lojinha</p>
+            <p>&copy; 2018 - Lojinha</p>
         </footer>
     </div>
 

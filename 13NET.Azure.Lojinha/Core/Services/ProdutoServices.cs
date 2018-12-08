@@ -18,12 +18,17 @@ namespace _13NET.Azure.Lojinha.Core.Services
             this._storage = storage;
         }
 
+        public async Task<Produto> GetProduto(string id)
+        {
+            return await _storage.GetProduto(id);
+        }
+
         public async Task<List<Produto>> GetProdutos()
         {
             var key = "produtos";
             var value = _cache.Get(key);
-            
-            if(string.IsNullOrEmpty(value))
+
+            if (string.IsNullOrEmpty(value))
             {
                 var produtos = await _storage.GetProdutos();
                 _cache.Set(key, JsonConvert.SerializeObject(produtos));

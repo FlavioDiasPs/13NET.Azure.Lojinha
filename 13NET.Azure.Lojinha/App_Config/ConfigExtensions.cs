@@ -12,6 +12,7 @@ namespace _13NET.Azure.Lojinha.App_Config
             service.AddSingleton<IRedisCache, RedisCache>();
             service.AddScoped<IAzureStorage, AzureStorage>();
             service.AddScoped<IProdutoServices, ProdutoServices>();
+            service.AddScoped<ICarrinhoServices, CarrinhoServices>();
         }
     }
 }
