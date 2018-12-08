@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using _13NET.Azure.Lojinha.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using _13NET.Azure.Lojinha.Models;
+using System.Diagnostics;
 
 namespace _13NET.Azure.Lojinha.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public IActionResult Index()
