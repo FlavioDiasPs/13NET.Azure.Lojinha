@@ -1,0 +1,9 @@
+﻿@model _13NET.Azure.Lojinha.Core.Models.Carrinho
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<span>
+    <span class="col-md-7">Total Itens: @Model.Itens.Sum(x => x.Quantidade)</span>
+    <span class="col-md-7">R$ @Model.Itens.Sum(x => x.Produto.Preco * x.Quantidade)</span>
+</span>

@@ -18,6 +18,11 @@ namespace _13NET.Azure.Lojinha.Core.Services
             this._storage = storage;
         }
 
+        public void AddProduto(Produto produto)
+        {
+            _storage.AddProduto(produto);
+        }
+
         public async Task<Produto> GetProduto(string id)
         {
             return await _storage.GetProduto(id);

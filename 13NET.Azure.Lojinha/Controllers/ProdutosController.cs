@@ -24,17 +24,17 @@ namespace _13NET.Azure.Lojinha.Controllers
         {
             var produto = new Produto
             {
-                Id = 330286,
-                Nome = "Renato em forma de purpurina",
-                Descricao = "Extrato de divamór da treze net após lacre arrasador.",
-                Preco = 1.99m,
-                Categoria = new Categoria() { Id = 330286, Nome = "Humano concentrado" },
-                Fabricante = new Fabricante() { Id = 330286, Nome = "Fiap human distributions" },
-                Tags = new[] { "Humano", "Fiap", "Purpurina" },
-                ImagemPrincipalUrl = @"https://i.cbc.ca/1.4466791.1514497691!/fileImage/httpImage/image.JPG_gen/derivatives/16x9_780/hellvetika.JPG"
+                Id = 330286_3,
+                Nome = "Justin Bieber embaralhador de cartas",
+                Descricao = "Sem qualquer habilidade motora, este pode destruir suas aulas de baralho.",
+                Preco = 200m,
+                Categoria = new Categoria() { Id = 330286_2, Nome = "Bailarina larga" },
+                Fabricante = new Fabricante() { Id = 330286_2, Nome = "Kenzo and Harry Kids Toys" },
+                Tags = new[] { "Bailarina", "Fiap", "Purpurina" },
+                ImagemPrincipalUrl = @"https://scontent-gru2-1.xx.fbcdn.net/v/t1.0-9/13962529_1416259418400832_4260769363945976823_n.jpg?_nc_cat=106&_nc_ht=scontent-gru2-1.xx&oh=83240e10ec3535530960217dfd02c74e&oe=5C9DE4F0"
             };
             
-            //_azureStorage.AddProduto(produto);
+            _produtoServices.AddProduto(produto);
 
             return Content("OK");
         }
